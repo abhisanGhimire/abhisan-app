@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14110f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<title>Abhisan</title>
+<style>
+  :root {
+    --bg: #faf7f2; --card: #ffffff; --ink: #1c1917; --muted: #78716c; --line: #e7e0d6;
+    --accent: #c2410c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14110f; --card: #1f1b18; --ink: #f5efe8; --muted: #a8a095; --line: #332d28; --accent: #fb923c; }
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: max(24px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+  }
+  main { max-width: 520px; margin: 0 auto; }
+  header { padding: 8px 4px 24px; }
+  h1 { margin: 0; font-size: 2rem; letter-spacing: -0.02em; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  a.tile {
+    display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+    min-height: 150px; padding: 16px; text-decoration: none; color: inherit;
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  }
+  a.tile:active { transform: scale(0.97); }
+  .emoji { font-size: 2rem; line-height: 1; }
+  .name { font-weight: 650; font-size: 1.05rem; }
+  .desc { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+  footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Abhisan</h1>
+    <p>My apps, one tap away.</p>
+  </header>
+  <div class="grid">
+    <a class="tile" href="https://claude.ai/artifact/K7uEwJJY5k2KtNDbSkxoBy">
+      <span class="emoji">🔔</span>
+      <span><span class="name">Nudge</span><div class="desc">Gentle reminders</div></span>
+    </a>
+    <a class="tile" href="https://claude.ai/artifact/8RPAByK14JcbRLYFrhFCSe">
+      <span class="emoji">🗣️</span>
+      <span><span class="name">English 90</span><div class="desc">90-day American English</div></span>
+    </a>
+    <a class="tile" href="https://claude.ai/artifact/VhMNZDHHn59gbi5eg9ewsN">
+      <span class="emoji">📒</span>
+      <span><span class="name">Daybook</span><div class="desc">Daily planning</div></span>
+    </a>
+    <a class="tile" href="https://abhisanghimire.github.io/image2pdf/">
+      <span class="emoji">🖼️</span>
+      <span><span class="name">Image to PDF</span><div class="desc">Merge images into a PDF</div></span>
+    </a>
+  </div>
+  <footer>Tap a tile to open the app</footer>
+</main>
+<script>
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
+</script>
+</body>
+</html>
