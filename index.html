@@ -35,6 +35,11 @@
   .emoji { font-size: 2rem; line-height: 1; }
   .name { font-weight: 650; font-size: 1.05rem; }
   .desc { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+  details.folder { margin-bottom: 14px; }
+  summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none;
+    padding: 14px 16px; margin-bottom: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; font-weight: 650; }
+  summary::-webkit-details-marker { display: none; }
+  .count { color: var(--muted); font-weight: 500; font-size: 0.85rem; }
   footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 0.8rem; }
 </style>
 </head>
@@ -44,25 +49,75 @@
     <h1>Abhisan</h1>
     <p>My apps, one tap away.</p>
   </header>
-  <div class="grid">
-    <a class="tile" href="https://claude.ai/artifact/K7uEwJJY5k2KtNDbSkxoBy">
-      <span class="emoji">🔔</span>
-      <span><span class="name">Nudge</span><div class="desc">Gentle reminders</div></span>
-    </a>
-    <a class="tile" href="https://claude.ai/artifact/8RPAByK14JcbRLYFrhFCSe">
-      <span class="emoji">🗣️</span>
-      <span><span class="name">English 90</span><div class="desc">90-day American English</div></span>
-    </a>
-    <a class="tile" href="https://claude.ai/artifact/VhMNZDHHn59gbi5eg9ewsN">
-      <span class="emoji">📒</span>
-      <span><span class="name">Daybook</span><div class="desc">Daily planning</div></span>
-    </a>
-    <a class="tile" href="https://abhisanghimire.github.io/image2pdf/">
-      <span class="emoji">🖼️</span>
-      <span><span class="name">Image to PDF</span><div class="desc">Merge images into a PDF</div></span>
-    </a>
-  </div>
-  <footer>Tap a tile to open the app</footer>
+  <details class="folder" open>
+    <summary><span>💼 Work</span><span class="count">4</span></summary>
+    <div class="grid">
+      <a class="tile" href="https://claude.ai/artifact/9mZtsByKuhLBUp4K7pi5KZ">
+        <span class="emoji">🎮</span>
+        <span><span class="name">Game Room Sign-In</span><div class="desc">Sign-ups &amp; activity</div></span>
+      </a>
+      <a class="tile" href="https://abhisanghimire.github.io/hpsg-website/">
+        <span class="emoji">🛡️</span>
+        <span><span class="name">HPSG</span><div class="desc">Student pitch site</div></span>
+      </a>
+      <a class="tile" href="https://abhisanghimire.github.io/ocean-tank-project/">
+        <span class="emoji">🌊</span>
+        <span><span class="name">Ocean Tank</span><div class="desc">Beta Bowl sample site</div></span>
+      </a>
+      <a class="tile" href="https://abhisanghimire.github.io/cyber-explorers-verify/">
+        <span class="emoji">🎓</span>
+        <span><span class="name">Cyber Explorers</span><div class="desc">Certificate verification</div></span>
+      </a>
+    </div>
+  </details>
+  <details class="folder">
+    <summary><span>🏠 Personal</span><span class="count">3</span></summary>
+    <div class="grid">
+      <a class="tile" href="https://claude.ai/artifact/K7uEwJJY5k2KtNDbSkxoBy">
+        <span class="emoji">🔔</span>
+        <span><span class="name">Nudge</span><div class="desc">Gentle reminders</div></span>
+      </a>
+      <a class="tile" href="https://claude.ai/artifact/8RPAByK14JcbRLYFrhFCSe">
+        <span class="emoji">🗣️</span>
+        <span><span class="name">English 90</span><div class="desc">90-day American English</div></span>
+      </a>
+      <a class="tile" href="https://claude.ai/artifact/VhMNZDHHn59gbi5eg9ewsN">
+        <span class="emoji">📒</span>
+        <span><span class="name">Daybook</span><div class="desc">Daily planning</div></span>
+      </a>
+    </div>
+  </details>
+  <details class="folder">
+    <summary><span>⚡ Vibe Coded Apps</span><span class="count">3</span></summary>
+    <div class="grid">
+      <a class="tile" href="https://abhisanghimire.github.io/image2pdf/">
+        <span class="emoji">🖼️</span>
+        <span><span class="name">Image to PDF</span><div class="desc">Merge images into a PDF</div></span>
+      </a>
+      <a class="tile" href="https://abhisanghimire.github.io/animalia/">
+        <span class="emoji">🦁</span>
+        <span><span class="name">Animalia</span><div class="desc">Animal encyclopedia</div></span>
+      </a>
+      <a class="tile" href="https://abhisanghimire.github.io/proxmox-academy/">
+        <span class="emoji">🖥️</span>
+        <span><span class="name">Proxmox Academy</span><div class="desc">Interactive Proxmox course</div></span>
+      </a>
+    </div>
+  </details>
+  <details class="folder">
+    <summary><span>🌐 Other Sites</span><span class="count">2</span></summary>
+    <div class="grid">
+      <a class="tile" href="https://abhisanghimire.github.io/emmanuel-opoku/">
+        <span class="emoji">🎨</span>
+        <span><span class="name">Emmanuel Opoku</span><div class="desc">Artist website</div></span>
+      </a>
+      <a class="tile" href="https://abhisanghimire.github.io/sherylmemorialfund/">
+        <span class="emoji">🕊️</span>
+        <span><span class="name">Sheryl Memorial Fund</span><div class="desc">Memorial fund site</div></span>
+      </a>
+    </div>
+  </details>
+  <footer>Tap a folder, then a tile to open the app</footer>
 </main>
 <script>
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
